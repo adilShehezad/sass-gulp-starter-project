@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     gulp_size = require('gulp-size'),
     gulp_imagemin = require('gulp-imagemin'),
+    imageminMozjpeg  = require('imagemin-mozjpeg'),
     imagemin_pngquant = require('imagemin-pngquant'),
     plumber = require('gulp-plumber'),
     gulp_hPages = require('gulp-gh-pages'),
@@ -114,12 +115,20 @@ gulp.task('minify-html', function () {
 //Minify images and inject to dist folder
 gulp.task('imgmin', function () {
     return gulp.src(path.imgSrc)
-        .pipe(gulp_imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            use: [imagemin_pngquant()]
-        }))
-        .pipe(gulp.dest(path.imgDest));
+    .pipe(gulp_imagemin([
+        gulp_imagemin.gifsicle({interlaced: true}),
+        gulp_imagemin.jpegtran({progressive: true}),
+        gulp_imagemin.optipng({optimizationLevel: 9}),//Adjust the quailty of png image according to your  need
+        imageminMozjpeg({
+            quality: 50 //Adjust the quailty of Jpeg image according to your  need
+        }),
+        gulp_imagemin.svgo({
+            plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+            ]
+        })
+    ])).pipe(gulp.dest(path.imgDest));
 });
 
 // Watch for all changes including scss, html, js and images
