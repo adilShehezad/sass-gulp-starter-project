@@ -1,0 +1,51 @@
+{
+  "name": "sass-gulp-starter-project",
+  "version": "1.0.0",
+  "description": "scss with gulp starter project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adilShehezad/sass-gulp-starter-project.git"
+  },
+  "keywords": [
+    "sass",
+    "gulp",
+    "starter",
+    "project",
+    "browser-sync",
+    "image-minify",
+    "Front-end",
+    "auto-reload",
+    "autoprefixer"
+  ],
+  "author": "Adil Shehzad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adilShehezad/sass-gulp-starter-project/issues"
+  },
+  "homepage": "https://github.com/adilShehezad/sass-gulp-starter-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-minify-html": "^1.0.5",
+    "browser-sync": "^2.11.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-gh-pages": "^0.5.4",
+    "imagemin-pngquant": "^5.0.1",
+    "jshint": "^2.9.1",
+    "gulp-notify": "^3.1.0",
+    "gulp-cached": "^1.1.0"
+  }
+}
