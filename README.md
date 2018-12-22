@@ -1,7 +1,7 @@
 # sass-gulp-starter-project
 
 
-This project is for biggners who are new to use gulp and it's   specifically to html/sass project, no extra dependieces. I've commented the each task in very simple words so it's very easy to understand for bigginers how to change the paths and options.
+This project is for biggners who are new to use gulp and it's   specifically for html/sass project, no extra dependieces. I've commented the each task in very simple words so it's very easy to understand for bigginers how to change the paths and options.
 
 ## Usage
 
@@ -56,4 +56,4 @@ gulp
     -gulp-cached
 
 
-I'm very thankful to developers of these packages. 
+I'm very thankful to developers of NPM packages. 
