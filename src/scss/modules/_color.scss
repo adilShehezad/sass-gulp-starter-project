@@ -1,0 +1,20 @@
+$red : brown;
+body{
+    padding-top:10px;
+}
+img{
+    max-width:100%;
+}
+body {
+    background:$red;
+    border:10px solid red;
+}
+.main-sec{
+    min-height:100vh;
+    border:1px solid darkred;
+    border-radius: 5px;
+    background:lightblue;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+}

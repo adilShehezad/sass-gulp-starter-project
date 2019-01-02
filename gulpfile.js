@@ -67,11 +67,11 @@ gulp.task('scss', function () {
         .pipe(rename('main.css'))
         .pipe(gulp.dest(path.scssDist))
         .pipe(reload({ stream: true }))
-
         .pipe(cssmin())
         .pipe(gulp_size({ gzip: true, showFiles: true }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(path.scssDist))
+        .pipe(reload({ stream: true }));
 });
 
 //Handle scss errors
@@ -103,7 +103,8 @@ gulp.task('jshint', function () {
 gulp.task('minify-html', function () {
     var opts = {
         comments: true,
-        spare: true
+        spare: true,
+        collapseWhitespace: true
     };
 
     gulp.src('./src/*.html')
@@ -133,7 +134,7 @@ gulp.task('imgmin', function () {
 
 // Watch for all changes including scss, html, js and images
 gulp.task('watch', function () {
-    gulp.watch('./src/scss/**/*.scss', ['scss']);
+    gulp.watch(path.scssSrc, ['scss']);
     gulp.watch('./src/js/*.js', ['js']);
     gulp.watch('./src/*.html', ['minify-html']);
     gulp.watch('./src/img/*', ['imgmin']);
